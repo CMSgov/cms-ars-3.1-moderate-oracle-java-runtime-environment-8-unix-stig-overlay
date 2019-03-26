@@ -1,4 +1,4 @@
-# cms-ars-3.1-moderate-oracle-java-runtime-environment-8-stig-overlay
+# cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay
 InSpec profile overlay to validate the secure configuration of Oracle Java Runtime Environment (JRE) 8 against [DISA's](https://iase.disa.mil/stigs/Pages/index.aspx) Oracle JRE UNIX STIG Version 1 Release 3 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as High.
 
 ## Getting Started  
