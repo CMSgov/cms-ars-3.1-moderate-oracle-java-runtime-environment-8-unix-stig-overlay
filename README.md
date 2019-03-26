@@ -1,8 +1,8 @@
 # cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay
-InSpec profile overlay to validate the secure configuration of Oracle Java Runtime Environment (JRE) 8 against [DISA's](https://iase.disa.mil/stigs/Pages/index.aspx) Oracle JRE UNIX STIG Version 1 Release 3 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as High.
+InSpec profile overlay to validate the secure configuration of Oracle Java Runtime Environment (JRE) 8 on UNIX against [DISA's](https://iase.disa.mil/stigs/Pages/index.aspx) Oracle JRE UNIX STIG Version 1 Release 3 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as Moderate.
 
 ## Getting Started  
-It is intended and recommended that InSpec and this profile overlay be run from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __winrm__.
+It is intended and recommended that InSpec and this profile overlay be run from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __ssh__.
 
 __For the best security of the runner, always install on the runner the _latest version_ of InSpec and supporting Ruby language components.__ 
 
@@ -11,23 +11,8 @@ Latest versions and installation options are available at the [InSpec](http://in
 The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
 ```
-# Username for MSSQL DB Server
-user: null
-
-# Password for MSSQL DB Server
-password: null
-
-# Hostname for MSSQL DB Server
-host: 'hostname'
-
-# Instance name of the MSSQL DB Server
-instance: 'MSSQL2014'
-
-# Port of MSSQL DB Server
-port: 1433
-
-# Name of the specific database being evaluated within the MSSQL server
-db_name: 'master'
+# Set to true if this system is on the SIPRNET
+is_on_siprnet: false
 ```
 
 ## Running This Overlay
@@ -36,24 +21,24 @@ When the __"runner"__ host uses this profile overlay for the first time, follow 
 ```
 mkdir profiles
 cd profiles
-git clone https://github.cms.gov/ispg/cms-ars-3.1-high-microsoft-sql-server-2014-instance-stig-overlay.git
-git clone https://github.com/mitre/microsoft-sql-server-2014-instance-stig-baseline.git
-cd cms-ars-3.1-high-microsoft-sql-server-2014-instance-stig-overlay
+git clone https://github.cms.gov/ispg/cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay.git
+git clone https://github.com/mitre/oracle-java-runtime-environment-8-unix-stig-baseline.git
+cd cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay
 bundle install
 cd ..
-inspec exec cms-ars-3.1-high-microsoft-sql-server-2014-instance-stig-overlay --target=winrm://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> --attrs=cms-ars-3.1-high-microsoft-sql-server-2014-instance-stig-overlay/static-attributes.yml <path_to_your_attributes_file/name_of_your_attributes_file.yml>
+inspec exec cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --attrs=cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay/static-attributes.yml <path_to_your_attributes_file/name_of_your_attributes_file.yml> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
 ```
 
 For every successive run, follow these steps to always have the latest version of this overlay and dependent profiles:
 
 ```
-cd profiles/microsoft-sql-server-2014-instance-stig-baseline
+cd profiles/oracle-java-runtime-environment-8-unix-stig-baseline
 git pull
-cd ../cms-ars-3.1-high-microsoft-sql-server-2014-instance-stig-overlay
+cd ../cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay
 git pull
 bundle install
 cd ..
-inspec exec cms-ars-3.1-high-microsoft-sql-server-2014-instance-stig-overlay --target=winrm://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> --attrs=cms-ars-3.1-high-microsoft-sql-server-2014-instance-stig-overlay/static-attributes.yml <path_to_your_attributes_file/name_of_your_attributes_file.yml>
+inspec exec cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --attrs=cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay/static-attributes.yml <path_to_your_attributes_file/name_of_your_attributes_file.yml> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json>
 ```
 
 ## Viewing the JSON Results
@@ -71,7 +56,7 @@ The JSON InSpec results file may also be loaded into a __[full heimdall server](
 * Alicia Sturtevant
 
 ## Getting Help
-To report a bug or feature request, please open an [issue](https://github.cms.gov/ispg/cms-ars-3.1-high-microsoft-sql-server-2014-instance-stig-overlay/issues/new).
+To report a bug or feature request, please open an [issue](https://github.cms.gov/ispg/cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay/issues/new).
 
 ## License
 This is licensed under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) license. 
