@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-include_controls 'nginx-baseline' do
+include_controls 'oracle-java-runtime-environment-7-unix-stig-baseline' do
   control 'V-66919' do
 
   end
