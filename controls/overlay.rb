@@ -8,7 +8,7 @@ include_controls 'oracle-java-runtime-environment-8-unix-stig-baseline' do
   end
 
   control 'V-66923' do
-    timpact 0.0
+    impact 0.0
 		desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
 
