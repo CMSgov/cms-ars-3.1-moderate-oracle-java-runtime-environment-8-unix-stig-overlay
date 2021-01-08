@@ -8,14 +8,24 @@ __For the best security of the runner, always install on the runner the _latest 
 
 The latest versions and installation options are available at the [InSpec](http://inspec.io/) site.
 
-Git is required to download the latest InSpec profiles using the instructions below. Git can be downloaded from the [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) site. 
-
 ## Tailoring to Your Environment
 The following inputs must be configured in an inputs ".yml" file for the profile to run correctly for your specific environment. More information about InSpec inputs can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
 ```
 # Set to true if this system is on the SIPRNET
 is_on_siprnet: false
+
+# Java version allowed 
+java_version: '1.8.0_212'
+
+# Java deployment.config file (change to actual path)
+deployment_config_file: '/etc/.java/deployment/deployment.config'
+
+# Java deployment.properties file (change to actual path)
+deployment_properties_file: '/etc/.java/deployment/deployment.properties'
+
+# Java deployment/exception.sites file (change to actual path)
+deployment_exception_sites_file: '/etc/.java/deployment/exception.sites'
 ```
 
 ## Running This Overlay Directly from Github
