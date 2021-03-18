@@ -15,8 +15,8 @@ The following inputs must be configured in an inputs ".yml" file for the profile
 # Set to true if this system is on the SIPRNET
 is_on_siprnet: false
 
-# Java version allowed 
-java_version: '1.8.0_212'
+# Java version allowed (e.g.: '1.8.0_212')
+java_version: <latest_version>
 
 # Java deployment.config file (change to actual path)
 deployment_config_file: '/etc/.java/deployment/deployment.config'
