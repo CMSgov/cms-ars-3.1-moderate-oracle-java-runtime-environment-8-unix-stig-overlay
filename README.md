@@ -4,7 +4,6 @@ InSpec profile overlay to validate the secure configuration of Oracle Java Runti
 ## Container-Ready: Profile updated to adapt checks when the running against a containerized instance of JRE8, based on reference container: (docker pull registry1.dso.mil/ironbank/opensource/gradle/gradle-jre8@latest)
 
 ## Getting Started  
-It is intended and recommended that InSpec and this profile overlay be run from a __"runner"__ host (such as a DevOps orchestration server, an administrative management system, or a developer's workstation/laptop) against the target remotely over __ssh__.
 
 __For the best security of the runner, always install on the runner the _latest version_ of InSpec and supporting Ruby language components.__ 
 
