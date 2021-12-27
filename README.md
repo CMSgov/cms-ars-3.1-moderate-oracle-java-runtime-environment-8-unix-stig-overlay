@@ -1,7 +1,7 @@
 # cms-ars-3.1-moderate-oracle-java-runtime-environment-8-unix-stig-overlay
 InSpec profile overlay to validate the secure configuration of Oracle Java Runtime Environment (JRE) 8 on UNIX against [DISA's](https://iase.disa.mil/stigs/Pages/index.aspx) Oracle JRE 8 UNIX STIG Version 1 Release 3 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categorized as Moderate.
 
-## Container-Ready: Profile updated to adapt checks when the running against a containerized instance of JRE8, based on reference container: (docker pull registry1.dso.mil/ironbank/opensource/gradle/gradle-jre8@latest)
+#### Container-Ready: Profile updated to adapt checks when the running against a containerized instance of JRE8, based on reference container: (docker pull registry1.dso.mil/ironbank/opensource/gradle/gradle-jre8@latest)
 
 ## Getting Started  
 
